@@ -6,6 +6,10 @@ export async function getExistingUser(db: ReturnType<typeof dbSqlite>, username:
   return db.select().from(userTable).where(eq(userTable.username, username)).get();
 }
 
+export async function getAllUsers(db: ReturnType<typeof dbSqlite>) {
+  return db.select().from(userTable).all();
+}
+
 export async function getExistingAccount(db: ReturnType<typeof dbSqlite>, providerId: string, providerUserId: number) {
   return db
     .select()

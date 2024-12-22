@@ -20,6 +20,13 @@ CREATE TABLE `users` (
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `users_username_unique` ON `users` (`username`);--> statement-breakpoint
+CREATE TABLE `posts` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`title` text(50) NOT NULL,
+	`content` text NOT NULL,
+	`userId` text NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE `todos` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`text` text(50) NOT NULL

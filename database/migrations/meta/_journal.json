@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1734853406615,
-      "tag": "0000_colorful_oracle",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1734871054432,
-      "tag": "0001_open_winter_soldier",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1734871220931,
-      "tag": "0002_dear_agent_zero",
+      "when": 1734882113043,
+      "tag": "0000_dusty_mephistopheles",
       "breakpoints": true
     }
   ]
