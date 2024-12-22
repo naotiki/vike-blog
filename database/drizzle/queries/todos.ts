@@ -1,5 +1,5 @@
 import { todoTable } from "../schema/todos";
-import { type dbSqlite } from "../db";
+import type { dbSqlite } from "../db";
 
 export function insertTodo(db: ReturnType<typeof dbSqlite>, text: string) {
   return db.insert(todoTable).values({ text });

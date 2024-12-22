@@ -9,7 +9,7 @@ export const telefuncHandler: Get<[], UniversalHandler> = () => async (request, 
     method: request.method,
     body: await request.text(),
     context: {
-      ...(context as { db: ReturnType<typeof dbSqlite> }),
+      ...(context),
       ...runtime,
     },
   });

@@ -2,7 +2,7 @@ import "./style.css";
 
 import "./tailwind.css";
 
-import React from "react";
+import type React from "react";
 import logoUrl from "../assets/logo.svg";
 import { Link } from "../components/Link.js";
 import { usePageContext } from "vike-react/usePageContext";
@@ -23,7 +23,10 @@ export default function LayoutDefault({
           <>
             <Link href="/new-post">New Post</Link>
             <Link href="/users/me">My Page</Link>
+            <hr/>
+            {user.username}
             <button
+              type="button"
               className="text-left"
               onClick={async () => {
                 await fetch("/api/logout", { method: "POST" });
