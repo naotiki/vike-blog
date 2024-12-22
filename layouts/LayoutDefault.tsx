@@ -22,9 +22,9 @@ export default function LayoutDefault({
         {user ? (
           <>
             <Link href="/new-post">New Post</Link>
-            <Link href="/users/me">My Page</Link>
-            <hr/>
-            {user.username}
+            <Link href={`/users/${user.username}`}>My Page</Link>
+            <hr className="my-2" />
+            <p>Hi! {user.username}</p>
             <button
               type="button"
               className="text-left"

@@ -1,7 +1,7 @@
 import type { User } from "lucia";
 
 export type Post = {
-  id: string;
+  id: number;
   title: string;
   content: string;
   user: {

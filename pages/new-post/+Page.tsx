@@ -61,7 +61,7 @@ export default function Page() {
   }
   return (
     <>
-      <h1 className={"font-bold text-3xl pb-4"}>投稿を作成</h1>
+      <h1 className={"font-bold text-3xl pb-4"}>New Post</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
@@ -69,7 +69,7 @@ export default function Page() {
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>タイトル</FormLabel>
+                <FormLabel>Title</FormLabel>
                 <FormControl>
                   <Input  {...field} />
                 </FormControl>
@@ -82,7 +82,7 @@ export default function Page() {
             name="content"
             render={({ field:{ref,...field} }) => (
               <FormItem>
-                <FormLabel>本文</FormLabel>
+                <FormLabel>Contents</FormLabel>
                 <FormControl>
                   <MDXEditor
                     markdown={field.value}
@@ -133,7 +133,7 @@ export default function Page() {
               </FormItem>
             )}
           />
-          <Button type="submit">投稿する</Button>
+          <Button type="submit">Post!</Button>
         </form>
       </Form>
     </>

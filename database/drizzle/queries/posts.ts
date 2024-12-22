@@ -8,7 +8,19 @@ export function insertPost(db: ReturnType<typeof dbSqlite>, title: string, conte
   return db.insert(postTable).values({ title, content, userId });
 }
 
-
+export function getPost(db: ReturnType<typeof dbSqlite>, id: number) {
+  return db.select(
+    {
+      id: postTable.id,
+      title: postTable.title,
+      content: postTable.content,
+      user: {
+        id: userTable.id,
+        username: userTable.username,
+      },
+    } satisfies Record<keyof Post, unknown>
+  ).from(postTable).where(eq(postTable.id, id)).innerJoin(userTable, eq(postTable.userId, userTable.id),).get();
+}
 
 export function getAllPostAbstracts(db: ReturnType<typeof dbSqlite>) {
   return db.select(

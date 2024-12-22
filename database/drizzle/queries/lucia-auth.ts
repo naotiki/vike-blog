@@ -1,4 +1,4 @@
-import { dbSqlite } from "../db";
+import type { dbSqlite } from "../db";
 import { oauthAccountTable, userTable } from "../schema/lucia-auth";
 import { and, eq } from "drizzle-orm";
 
