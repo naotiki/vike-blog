@@ -1,12 +1,9 @@
-import React from "react";
 import { useData } from "vike-react/useData";
 import type { Data } from "./+data";
 import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
   CardFooter,
 } from "@/components/ui/card";
 import { Link } from "@/components/Link";
