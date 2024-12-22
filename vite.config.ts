@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import devServer from "@hono/vite-dev-server";
 import { defineConfig } from "vite";
 import vike from "vike/plugin";
-
+import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     vike({}),
@@ -24,11 +24,16 @@ export default defineConfig({
     }),
     react({}),
     telefunc(),
+    tsconfigPaths(),
   ],
-
-  resolve: {
+  /* resolve: {
     alias: {
       "@": new URL("./", import.meta.url).pathname,
     },
-  },
+  }, */
+  css: {
+    modules: {
+      localsConvention:"dashes"
+    },
+  }
 });
