@@ -5,7 +5,9 @@ export type Post = {
   title: string;
   content: string;
   user: {
-    id:string;
+    id: string;
     username: string;
   }
 }
+
+export type PostAbstract = Pick<Post, "id" | "title" | "user">;

@@ -1,17 +1,33 @@
 import React from "react";
-import { Counter } from "./Counter.js";
+import { useData } from "vike-react/useData";
+import type { Data } from "./+data";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Link } from "@/components/Link";
 
 export default function Page() {
+  const { posts } = useData<Data>();
   return (
     <>
       <h1 className={"font-bold text-3xl pb-4"}>My Vike app</h1>
-      This page is:
-      <ul>
-        <li>Rendered to HTML.</li>
-        <li>
-          Interactive. <Counter />
-        </li>
-      </ul>
+      {posts.map((post) => (
+        <Link href={`/posts/${post.id}`} key={post.id}>
+          <Card className="hover:bg-gray-100 hover:underline">
+            <CardHeader>
+              <CardTitle>{post.title}</CardTitle>
+            </CardHeader>
+            <CardFooter>
+              <p>{post.user.username}</p>
+            </CardFooter>
+          </Card>
+        </Link>
+      ))}
     </>
   );
 }
